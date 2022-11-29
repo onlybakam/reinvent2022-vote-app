@@ -1,12 +1,12 @@
 import { util, HTTPRequest, DynamoDBPutItemRequest, Key, Context } from '@aws-appsync/utils';
 
-export type AppContext<T, R = null, P=null> = Omit<Context, 'arguments' | 'result'> & {
-  arguments: T
-  result: R
-  prev: { result: P}
+export type AppContext<TArgs, TResult = null, TPrevResult=null> = Omit<Context, 'arguments' | 'result'> & {
+  arguments: TArgs
+  result: TResult
+  prev: { result: TPrevResult}
 }
 
-export function publishToSNSRequest(topicArn: string, values: any): HTTPRequest {
+export function publishToSNSRequest(topicArn: string, values: unknown): HTTPRequest {
   const arn = util.urlEncode(topicArn);
   const message = util.urlEncode(JSON.stringify(values));
   const parts = [

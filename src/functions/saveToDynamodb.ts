@@ -1,7 +1,6 @@
-import {  DynamoDBPutItemRequest, util } from '@aws-appsync/utils';
-import { MutationPlusOneArgs, Vote } from "../generated/graphql";
-import {AppContext, put} from '../libs';
-
+import { DynamoDBPutItemRequest, util } from '@aws-appsync/utils';
+import { MutationPlusOneArgs, Vote } from '../generated/graphql';
+import { AppContext, put } from '../libs';
 
 export function request(ctx: AppContext<MutationPlusOneArgs>): DynamoDBPutItemRequest {
   const { input: values } = ctx.arguments;

@@ -11,11 +11,12 @@ export function request(ctx: AppContext<MutationPlusOneArgs>): HTTPRequest {
     message: messages[input.msgId],
     received: util.time.nowISO8601()
   }
+  console.log('Publishing message to SNS', message)
   return publishToSNSRequest(TOPIC_ARN, message);
 }
 
 export function response(ctx: AppContext<MutationPlusOneArgs, HTTPResponse>) {
   const result = publishToSNSResponse(ctx.result)
-  console.log(`succesfully published to sns, ${result}`)
+  console.log(`succesfully published to sns:`, result)
   return true
 }
