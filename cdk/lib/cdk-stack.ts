@@ -68,7 +68,7 @@ export class CdkStack extends Stack {
       typeName: 'Mutation',
       fieldName: 'plusOne',
       pipelineConfig: [publishFn, putItemFn, translateFn],
-      code: `
+      code: /* JavaScript */`
 export function request(ctx) {
   ctx.stash.TOPIC_ARN = '${topic.topicArn}'
   return {};

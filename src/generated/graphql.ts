@@ -68,3 +68,10 @@ export type VoteInput = {
   guestId: Scalars['String'];
   msgId: Scalars['Int'];
 };
+
+export type AddVoteMutationVariables = Exact<{
+  input: VoteInput;
+}>;
+
+
+export type AddVoteMutation = { __typename?: 'Mutation', plusOne?: { __typename?: 'Vote', country: CountryCode, guestId: string, id: string, message?: string | null, msgId: number } | null };

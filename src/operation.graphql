@@ -1,0 +1,9 @@
+mutation AddVote($input: VoteInput!){
+  plusOne(input: $input) {
+    country
+    guestId
+    id
+    message
+    msgId
+  }
+}
