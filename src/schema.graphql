@@ -1,0 +1,37 @@
+input VoteInput {
+  guestId: String!
+  msgId: Int!
+  country: CountryCode!
+}
+
+type Vote {
+  id: ID!
+  guestId: String!
+  msgId: Int!
+  country: CountryCode!
+  message: String
+}
+
+enum CountryCode {
+  BR
+  CM
+}
+
+type CountryTally {
+  country: CountryCode!
+  tally: Int!
+  updatedAt: AWSDateTime
+}
+
+
+type Mutation {
+  plusOne(input: VoteInput!): Vote
+}
+
+type Query {
+  getTotals: [CountryTally]!
+}
+
+type Subscription {
+  onPlusOne: Vote @aws_subscribe(mutations: ["plusOne"])
+}
