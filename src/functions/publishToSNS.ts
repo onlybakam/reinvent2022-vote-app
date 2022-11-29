@@ -1,7 +1,7 @@
 import { HTTPRequest, util } from '@aws-appsync/utils';
 import { MutationPlusOneArgs } from "../generated/graphql";
-import { AppContext, HTTPResponse, publishToSNSRequest, publishToSNSResponse } from '../libs';
 import { messages } from "../common/messages";
+import { publishToSNSRequest, HTTPResponse, AppContext, publishToSNSResponse } from "brice-handy-appsync-libs";
 
 export function request(ctx: AppContext<MutationPlusOneArgs>): HTTPRequest {
   const { TOPIC_ARN } = ctx.stash;

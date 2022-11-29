@@ -1,5 +1,5 @@
 import { MutationPlusOneArgs, Vote } from "../generated/graphql";
-import { translateTextResponse, translateTextRequest, HTTPResponse, AppContext } from '../libs';
+import { translateTextResponse, translateTextRequest, HTTPResponse, AppContext } from 'brice-handy-appsync-libs';
 import { messages } from "../common/messages";
 
 

@@ -1,6 +1,6 @@
 import { DynamoDBPutItemRequest, util } from '@aws-appsync/utils';
 import { MutationPlusOneArgs, Vote } from '../generated/graphql';
-import { AppContext, put } from '../libs';
+import { AppContext, put } from 'brice-handy-appsync-libs';
 
 export function request(ctx: AppContext<MutationPlusOneArgs>): DynamoDBPutItemRequest {
   const { input: values } = ctx.arguments;
