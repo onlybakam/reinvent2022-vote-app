@@ -7,29 +7,35 @@ enum Code {
 }
 
 type Message = {
+  id: number
   code: Code
-  message: string
+  text: string
 }
 const messages: Message[] = [
   {
+    id: 0,
     code: Code.FR,
-    message: 'Allez les lions!',
+    text: 'Allez les lions!',
   },
   {
+    id: 1,
     code: Code.FR,
-    message: "Impossible n'est pas camerounais!",
+    text: "Impossible n'est pas camerounais!",
   },
   {
+    id: 2,
     code: Code.PT,
-    message: 'Força equipa'
+    text: 'Força equipa'
   },
   {
+    id: 3,
     code: Code.EN,
-    message: 'Go for the win!'
+    text: 'Go for the win!'
   },
   {
+    id: 4,
     code: Code.PT,
-    message: "Que vença o melhor time"
+    text: "Que vença o melhor time"
   }
 ]
 export {messages}

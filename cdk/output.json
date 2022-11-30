@@ -1,0 +1,9 @@
+{
+  "ReinventAppSyncJsStack": {
+    "graphqlEndpoint": "https://qe72z27jgvcn5nj2yfypdqarji.appsync-api.us-east-2.amazonaws.com/graphql",
+    "apiKey": "da2-6gr3glor4jhijislz52nrzorpa",
+    "authenticationType": "API_Key",
+    "region": "us-east-2",
+    "apiId": "7ubnvbmpkrautaywiwh2oevmna"
+  }
+}

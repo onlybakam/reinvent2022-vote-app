@@ -10,6 +10,7 @@ type Vote {
   msgId: Int!
   country: CountryCode!
   text: String
+  createdAt: AWSDateTime
 }
 
 enum CountryCode {

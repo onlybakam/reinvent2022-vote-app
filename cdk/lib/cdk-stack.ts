@@ -1,4 +1,4 @@
-import { Stack, StackProps } from 'aws-cdk-lib';
+import { CfnOutput, Stack, StackProps } from 'aws-cdk-lib';
 import * as sns from 'aws-cdk-lib/aws-sns';
 import * as iam from 'aws-cdk-lib/aws-iam';
 import * as logs from 'aws-cdk-lib/aws-logs';
@@ -77,6 +77,14 @@ export function response(ctx) {
   return ctx.prev.result;
 }`,
     });
+
+
+
+    new CfnOutput(this, 'graphqlEndpoint', { value: api.graphqlUrl })
+    new CfnOutput(this, 'region', { value: region })
+    new CfnOutput(this, 'authenticationType', { value: 'API_KEY'})
+    new CfnOutput(this, 'apiKey', { value: api.apiKey! })
+    new CfnOutput(this, 'apiId', { value: api.apiId })
   }
 }
 

@@ -3,8 +3,12 @@ import { MutationPlusOneArgs, Vote } from '../generated/graphql';
 import { AppContext, put } from 'brice-handy-appsync-libs';
 
 export function request(ctx: AppContext<MutationPlusOneArgs>): DynamoDBPutItemRequest {
-  const { input: values } = ctx.arguments;
+  const { input } = ctx.arguments;
   const key = { id: util.autoId() };
+  const values = {
+    ...input,
+    createdAt: util.time.nowISO8601()
+  }
   const condition = { id: { attributeExists: false } };
   return put({ key, values, condition });
 }

@@ -3,7 +3,7 @@ mutation AddVote($input: VoteInput!){
     country
     guestId
     id
-    message
+    text
     msgId
   }
 }
