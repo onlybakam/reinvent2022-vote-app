@@ -2,19 +2,20 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/20/solid'
+import { CursorArrowRaysIcon, EnvelopeOpenIcon, UsersIcon, StarIcon } from '@heroicons/react/24/outline'
+
 import appsyncImg from '../public/appsync.jpg'
+import brazilFlag from '../public/brazil-flag.png'
+import cameroonFlag from '../public/cameroon-flag.png'
 
 
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+const stats = [
+  { id: 1, name: 'Brazil', stat: 0, icon: StarIcon, img: brazilFlag },
+  { id: 2, name: 'Cameroon', stat: 0, icon: StarIcon, img: cameroonFlag },
+]
 
-// const user = {
-//   name: 'Tom Cook',
-//   email: 'tom@example.com',
-//   imageUrl:
-//     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-// }
+
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
 ]
@@ -75,17 +76,37 @@ export default function Example() {
         </nav>
 
         <div className="py-10">
-          <header>
-            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-              <h1 className="text-3xl font-bold leading-tight tracking-tight text-gray-900">Dashboard</h1>
-            </div>
-          </header>
-          <main>
-            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+ 
+          <main className='px-4'>
+            <div className="max-w-4xl mx-auto sm:px-6 lg:px-8">
               {/* Replace with your content */}
-              <div className="px-4 py-8 sm:px-0">
-                <div className="border-4 border-gray-200 border-dashed rounded-lg h-96" />
+
+              <div>
+
+      <dl className="grid grid-cols-2 gap-5 mt-5 ">
+        {stats.map((item) => (
+          <div
+            key={item.id}
+            className="relative px-4 pt-5 pb-12 overflow-hidden bg-white rounded-lg shadow sm:px-6 sm:pt-6"
+          >
+            <dt>
+              <div className="absolute p-3 bg-yellow-500 rounded-md">
+                <item.icon className="w-6 h-6 text-white" aria-hidden="true" />
               </div>
+              <p className="ml-16 text-sm font-medium text-gray-500 truncate">{item.name}</p>
+            </dt>
+            <dd className="flex items-baseline pb-6 ml-16 sm:pb-7">
+              <p className="text-2xl font-semibold text-gray-900">{item.stat}</p>
+            
+              <div className="absolute inset-x-0 bottom-0 w-full h-8 bg-gray-50">
+                  <Image src={item.img} className="object-cover object-center w-full h-full" alt='brazil flag' />
+              </div>
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+
               {/* /End replace */}
             </div>
           </main>
