@@ -9,7 +9,7 @@ type Vote {
   guestId: String!
   msgId: Int!
   country: CountryCode!
-  message: String
+  text: String
 }
 
 enum CountryCode {
