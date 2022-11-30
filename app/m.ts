@@ -3,7 +3,7 @@ enum Code {
   FR = 'FR',
   PT = 'PT',
   EN = 'EN',
-  SP = 'SP'
+  ES = 'ES'
 }
 
 type Message = {
@@ -37,5 +37,12 @@ const messages: Message[] = [
     code: Code.PT,
     text: "Que vença o melhor time"
   }
+  ,
+  {
+    id: 5,
+    code: Code.ES,
+    text: "Hasta el final, ¡vamos!"
+  }
+  
 ]
 export {messages}
